@@ -17,6 +17,7 @@
         var ctx = canvasEl.getContext("2d");
         var game = new UnblockMe.Game();
         new UnblockMe.GameView(game, ctx).start();
+        canvasEl.addEventListener("mousedown", game.handleClick);
       })();
     </script>
   </body>
