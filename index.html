@@ -5,6 +5,7 @@
 
   <body>
     <canvas></canvas>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script type="text/javascript" charset="utf-8" src='./lib/block.js'></script>
     <script type="text/javascript" charset="utf-8" src='./lib/game.js'></script>
     <script type="text/javascript" charset="utf-8" src='./lib/gameview.js'></script>
@@ -16,8 +17,7 @@
         canvasEl.height = UnblockMe.Game.DIM_Y;
         var ctx = canvasEl.getContext("2d");
         var game = new UnblockMe.Game();
-        new UnblockMe.GameView(game, ctx).start();
-        canvasEl.addEventListener("mousedown", game.handleClick);
+        new UnblockMe.GameView(game, canvasEl, ctx).start();
       })();
     </script>
   </body>
