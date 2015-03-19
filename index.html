@@ -13,8 +13,8 @@
     <script type="application/javascript">
       (function () {
         var canvasEl = document.getElementsByTagName("canvas")[0];
-        canvasEl.width = UnblockMe.Game.DIM_X;
-        canvasEl.height = UnblockMe.Game.DIM_Y;
+        canvasEl.width = UnblockMe.Game.DIM_X + 10;
+        canvasEl.height = UnblockMe.Game.DIM_Y + 10;
         var ctx = canvasEl.getContext("2d");
         var game = new UnblockMe.Game();
         new UnblockMe.GameView(game, canvasEl, ctx).start();
