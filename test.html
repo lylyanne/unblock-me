@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Unblock Me</title>
+  <link rel="stylesheet" type="text/css" href="css/unblock_me.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="ui/jquery.ui.core.js"></script>
+  <script src="ui/jquery.ui.widget.js"></script>
+  <script src="ui/jquery.ui.mouse.js"></script>
+  <script src="ui/jquery.ui.draggable.js"></script>
+  <script src="vendor/jquery-collision.js"></script>
+  <script src="vendor/jquery-ui-draggable-collision.js"></script>
+  <script>
+    $(function() {
+      $("#piece-1").draggable({
+        axis: "y",
+        containment: "parent",
+        obstacle: ".obstacle",
+        preventCollision: true
+      });
+
+      $("#piece-2").draggable({
+        axis: "x",
+        containment: "parent",
+        obstacle: ".obstacle",
+        preventCollision: true
+      });
+
+      $("#piece-3").draggable({
+        axis: "x",
+        containment: "parent",
+        obstacle: ".obstacle",
+        preventCollision: true
+      });
+
+      $("#piece-4").draggable({
+        axis: "x",
+        containment: "parent",
+        obstacle: ".obstacle",
+        preventCollision: true
+      });
+
+      $("#draggable").on("mouseover", "div", function(event) {
+        for (var i = 1; i <= 4; i++) {
+          $("#piece-" + i).addClass("obstacle");
+        }
+        $(event.currentTarget).removeClass("obstacle");
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="draggable">
+    <div id="piece-1"></div>
+    <div id="piece-2"></div>
+    <div id="piece-3"></div>
+    <div id="piece-4"></div>
+  </div>
+</body>
+</html>
