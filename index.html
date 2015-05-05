@@ -4,23 +4,31 @@
   </head>
   <style>
     .play-again {
-      width: 100px;
-      height: 23px;
+      width: 125px;
+      height: 46px;
       border-radius: 5px;
-      margin-left: 250px;
+      background-color: #FFCC66;
+      font-size: 16px;
     }
 
-    .credit {
+    .instruction {
+      display: inline-block;
+      vertical-align:top;
+      margin-left: 30px;
+      width: 40%;
       font-family: verdana, sans-serif;
-      margin-left: 150px;
     }
   </style>
   <body>
     <canvas></canvas>
-    <br><br>
-    <button class="play-again">Play Again</button>
-    <br><br>
-    <p class="credit">Built by Felicia Wang and <a href="https://github.com/phoebejhhong">Phoebe Hong</a></p>
+    <div class="instruction">
+      <h1>Unblock Me</h1>
+      <h3>Instruction:</h3>
+      <p>Get the red block out of the box by sliding the other
+      blocks out of the way.</p>
+      <button class="play-again">Play Again!</button>
+      <p>Built by <a href="https://github.com/lylyanne">Felicia Wang</a> and <a href="https://github.com/phoebejhhong">Phoebe Hong</a></p>
+    </div>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script type="text/javascript" charset="utf-8" src='./lib/block.js'></script>
     <script type="text/javascript" charset="utf-8" src='./lib/game.js'></script>
@@ -29,8 +37,8 @@
     <script type="application/javascript">
       (function () {
         var canvasEl = document.getElementsByTagName("canvas")[0];
-        canvasEl.width = UnblockMe.Game.DIM_X + 10;
-        canvasEl.height = UnblockMe.Game.DIM_Y + 10;
+        canvasEl.width = UnblockMe.Game.DIM_X + 20;
+        canvasEl.height = UnblockMe.Game.DIM_Y + 20;
         var ctx = canvasEl.getContext("2d");
         var game = new UnblockMe.Game();
         new UnblockMe.GameView(game, canvasEl, ctx).start();
