@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Unblock Me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <style>
     .play-again {
@@ -12,11 +13,19 @@
     }
 
     .instruction {
-      display: inline-block;
-      vertical-align:top;
-      margin-left: 30px;
-      width: 40%;
+      display: block;
+      width: 620px;
       font-family: verdana, sans-serif;
+      text-align: center;
+    }
+
+    @media screen and (min-width: 1105px) {
+      .instruction {
+        display: inline-block;
+        width: 40%;
+        vertical-align:top;
+        margin-left: 30px;
+      }
     }
   </style>
   <body>
